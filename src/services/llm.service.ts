@@ -1,6 +1,11 @@
+interface CreateSummaryData {
+  amountOfSentences: number;
+  url: string;
+}
+
 export class LLMService {
-  public createSummary(): Promise<string> {
-    return Promise.resolve('success');
+  public createSummary(createSummaryData: CreateSummaryData): Promise<CreateSummaryData> {
+    return Promise.resolve(createSummaryData);
   }
 }
 
