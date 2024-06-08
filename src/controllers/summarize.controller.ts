@@ -8,9 +8,9 @@ export class SummarizeController {
 
   public async createSummary(req: Request, res: Response): Promise<Response> {
     try {
-      const { amountOfSentences, url, min_length, max_length } = matchedData(req);
+      const { url, min_length, max_length } = matchedData(req);
 
-      const createSummaryData = { amountOfSentences, url, min_length, max_length };
+      const createSummaryData = { url, min_length, max_length };
       const articleSummary = await llmService.createSummary(createSummaryData);
 
       if (!articleSummary) {
